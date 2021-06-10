@@ -20,7 +20,7 @@ def print_word_freq(file):
 
 
 def count_words(dict):
-    for word in extract_words:
+    for word in print_word_freq:
         a = { word } 
     for word in a:
         if word in a:
