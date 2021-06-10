@@ -1,4 +1,4 @@
-STOP_WORDS = [
+pythSTOP_WORDS = [
     'a', 'an', 'and', 'are', 'as', 'at', 'be', 'by', 'for', 'from', 'has', 'he',
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
     'will', 'with'
@@ -20,28 +20,27 @@ def print_word_freq(file):
 
 
 def count_words(dict):
-    for word in print_word_freq:
-        a = { word } 
-    for word in a:
-        if word in a:
-            a[word] = a[word] + 1
+    for words in print_word_freq:
+        a = { words } 
+    for words in a:
+        if words in a:
+            a[words] = a[words] + 1
     sort_a = sorted(a.items(), key=lambda x: x[1], reverse=True)
-    for i in sort_a:
-	    print(i[0], i[1])
+    for words in sort_a:
+	    print(words[0], words[1])
 
+# if __name__ == "__main__":
+#     import argparse
+#     from pathlib import Path
 
-if __name__ == "__main__":
-    import argparse
-    from pathlib import Path
+#     parser = argparse.ArgumentParser(
+#         description='Get the word frequency in a text file.')
+#     parser.add_argument('file', help='file to read')
+#     args = parser.parse_args()
 
-    parser = argparse.ArgumentParser(
-        description='Get the word frequency in a text file.')
-    parser.add_argument('file', help='file to read')
-    args = parser.parse_args()
-
-    file = Path(args.file)
-    if file.is_file():
-        print_word_freq(file)
-    else:
-        print(f"{file} does not exist!")
-        exit(1)
+#     file = Path(args.file)
+#     if file.is_file():
+#         print_word_freq(file)
+#     else:
+#         print(f"{file} does not exist!")
+#         exit(1)
