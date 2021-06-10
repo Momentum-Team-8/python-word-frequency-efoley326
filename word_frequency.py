@@ -3,11 +3,31 @@ STOP_WORDS = [
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
     'will', 'with'
 ]
-
-
+import string
 def print_word_freq(file):
-    """Read in `file` and print out the frequency of words in that file."""
-    pass
+    with open(file) as one_today:
+        text = one_today.readwords()
+    
+    for words in text:
+        words = words.lower()
+        words = words.split()
+        words = words.strip('''!()-[]{};:'"\, <>./?@#$%^&*_~-''')
+    words_to_keep = ""
+    for words in file:
+        if words == STOP_WORDS:
+            words == None
+    return words_to_keep
+
+
+def count_words(dict):
+    for word in extract_words:
+        a = { word } 
+    for word in a:
+        if word in a:
+            a[word] = a[word] + 1
+    sort_a = sorted(a.items(), key=lambda x: x[1], reverse=True)
+    for i in sort_a:
+	    print(i[0], i[1])
 
 
 if __name__ == "__main__":
